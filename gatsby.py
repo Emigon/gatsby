@@ -9,6 +9,8 @@ from datetime import date
 DAILY_URL = "https://www.afr.com/Tables/Share_Tables_Daily/{0}/GGsoda.csv"
 
 date = date.today()
+date = date.replace(day = date.day - 1) # only collect yesterdays data
+
 # make sure the query date is a weekday
 day = date.weekday()
 if day in [5, 6]:
